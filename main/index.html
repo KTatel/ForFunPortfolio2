@@ -1,1 +1,126 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player One // Interactive Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Custom Particle Cursor Canvas -->
+  <canvas id="sparkle-canvas"></canvas>
+
+  <!-- 1. ENTRY PORTAL (BOOT SCREEN) -->
+  <section id="portal-screen">
+    <div class="parallax-layer layer-bg" data-depth="0.05"></div>
+    <div class="parallax-layer layer-clouds" data-depth="0.12">
+      <span class="floating-cloud c1">☁️</span>
+      <span class="floating-cloud c2">🌸</span>
+      <span class="floating-cloud c3">✨</span>
+      <span class="floating-cloud c4">☁️</span>
+    </div>
+    
+    <div class="portal-console parallax-layer" data-depth="0.2">
+      <div class="console-header">
+        <span class="dot pink"></span>
+        <span class="dot yellow"></span>
+        <span class="dot mint"></span>
+        <span class="console-title">SANCTUARY_OS // VER 2.6</span>
+      </div>
+      <div class="console-body">
+        <div class="emblem-ring">🌸</div>
+        <h1>WELCOME TO MY WORLD</h1>
+        <p class="subtitle">Interactive Character Hub & Digital Sanctuary</p>
+        <button id="enter-btn" class="arcade-btn">✦ PRESS START ✦</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PERSISTENT GAMIFIED HUD -->
+  <header id="hud-overlay" class="hud-hidden">
+    <!-- Top Left: Player Status -->
+    <div class="hud-card player-status">
+      <div class="avatar-frame">
+        <span class="avatar-icon">🎀</span>
+        <span class="lvl-badge">LVL 19</span>
+      </div>
+      <div class="stats-bars">
+        <div class="stat-row">
+          <span class="stat-label">HP (Energy)</span>
+          <div class="bar-track"><div class="bar-fill hp-fill"></div></div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">MP (Creativity)</span>
+          <div class="bar-track"><div class="bar-fill mp-fill"></div></div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">XP (Progress)</span>
+          <div class="bar-track"><div class="bar-fill xp-fill"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Right: Audio & System Controls -->
+    <div class="hud-card audio-widget">
+      <button id="sfx-toggle" class="icon-btn" aria-label="Toggle Sound">
+        🔊 <span id="sfx-label">SFX: ON</span>
+      </button>
+    </div>
+
+    <!-- Bottom Center: Teleport Map Dock -->
+    <nav class="hud-dock">
+      <button class="dock-btn active" data-target="zone-about">🪪 Character</button>
+      <button class="dock-btn" data-target="zone-hobbies">🕹️ Side Quests</button>
+      <button class="dock-btn" data-target="zone-achievements">🏆 Gacha Vault</button>
+      <button class="dock-btn" data-target="zone-certs">🃏 Deck (Certs)</button>
+      <button class="dock-btn" data-target="zone-life">📸 Purikura</button>
+    </nav>
+  </header>
+
+  <!-- 3. MAIN WORLD STAGE (CAMERA ZONES) -->
+  <main id="world-stage" class="stage-locked">
+    <section id="zone-about" class="world-zone active-zone">
+      <div class="zone-placeholder">
+        <h2>🪪 Zone 1: Character Inspect Sheet</h2>
+        <p>Phase 2 will load the 3D tilt card, RPG attribute radar, and animated avatar here.</p>
+      </div>
+    </section>
+
+    <section id="zone-hobbies" class="world-zone">
+      <div class="zone-placeholder">
+        <h2>🕹️ Zone 2: Isometric Room & Side Quests</h2>
+        <p>Phase 2 will load clickable room objects and glowing SVG path connections here.</p>
+      </div>
+    </section>
+
+    <section id="zone-achievements" class="world-zone">
+      <div class="zone-placeholder">
+        <h2>🏆 Zone 3: Holographic Quest Badges</h2>
+        <p>Phase 3 will load 3D foil-shader achievement badges here.</p>
+      </div>
+    </section>
+
+    <section id="zone-certs" class="world-zone">
+      <div class="zone-placeholder">
+        <h2>🃏 Zone 4: Tarot / Trading Card Deck</h2>
+        <p>Phase 3 will load the interactive shuffling certificate deck here.</p>
+      </div>
+    </section>
+
+    <section id="zone-life" class="world-zone">
+      <div class="zone-placeholder">
+        <h2>📸 Zone 5: Purikura Booth & Draggable Corkboard</h2>
+        <p>Phase 4 will load the physics photo strip printer and throwable polaroids here.</p>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
